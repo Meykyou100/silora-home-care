@@ -298,6 +298,46 @@ dialog h2{font-size:22px}
   .chip{font-size:13px}
   .band{font-size:12px;padding:8px 14px}
 }
+
+/* Premium footer */
+.site-footer{margin-top:0;padding:0;border-top:1px solid var(--line);background:var(--paper);font-size:14px;color:var(--mute)}
+.sf-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr 1.3fr;gap:40px;padding-top:56px;padding-bottom:40px}
+.sf-brand{display:grid;gap:14px;align-content:start}
+.sf-logo{display:block}
+.sf-tag{margin:0;max-width:260px;line-height:1.6}
+.sf-social{display:flex;gap:10px;margin-top:6px}
+.sf-ico{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:color .2s,border-color .2s,transform .2s}
+.sf-ico svg{width:18px;height:18px}
+.sf-ico:hover{color:var(--pink);border-color:var(--pink);transform:translateY(-2px)}
+.sf-col,.sf-contact,.sf-news{display:grid;gap:10px;align-content:start}
+.sf-col b,.sf-contact b,.sf-news b{font-size:13px;letter-spacing:.02em;color:var(--ink);margin-bottom:4px}
+.sf-col a,.sf-contact a{color:var(--mute);text-decoration:none;transition:color .2s}
+.sf-col a:hover,.sf-contact a:hover{color:var(--pink)}
+.sf-contact span{display:block}
+.sf-hours{font-size:13px}
+.sf-news p{margin:0 0 6px;line-height:1.6}
+.sf-news .btn{justify-self:start}
+.sf-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:20px;padding-bottom:24px;font-size:12px}
+.sf-legal{display:flex;flex-wrap:wrap;gap:18px}
+.sf-legal a{color:var(--mute);text-decoration:none}
+.sf-legal a:hover{color:var(--pink)}
+@media (max-width:1024px){.sf-grid{grid-template-columns:1fr 1fr 1fr;gap:36px 28px}.sf-brand{grid-column:1 / -1}}
+@media (max-width:640px){.sf-grid{grid-template-columns:1fr 1fr;gap:30px 20px;padding-top:40px}.sf-brand,.sf-news{grid-column:1 / -1}.sf-bottom{flex-direction:column;align-items:flex-start}}
+@media (prefers-color-scheme:dark){.site-footer{background:var(--paper)}}
+
+/* Mobile menu */
+.menu-btn{display:none;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;place-items:center;align-content:center;flex:none;padding:0}
+.menu-btn span{display:block;width:18px;height:1.8px;background:currentColor;border-radius:2px;margin:2.5px 0;transition:transform .3s ease,opacity .3s ease}
+.menu-btn.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mnav{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(43,21,32,.10);padding:6px 20px 18px;display:grid;z-index:25;animation:fadeDown .3s ease both}
+.mnav[hidden]{display:none}
+.mnav a{padding:14px 2px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}
+.mnav a:last-child{border-bottom:0}
+.mnav a:hover{color:var(--pink)}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (max-width:820px){.menu-btn{display:grid}header nav{display:none}}
 </style>
 </head>
 <body>
@@ -316,6 +356,17 @@ dialog h2{font-size:22px}
     <a class="cartlink" href="#panier" aria-label="Voir le panier">Panier<span class="badge" id="cartcnt">0</span></a>
     <button class="theme" id="theme" type="button" aria-label="Activer le mode sombre" title="Mode sombre"></button>
     <a class="btn sm" href="#panier">Commander</a>
+    <button class="menu-btn" id="menubtn" type="button" aria-expanded="false" aria-controls="mobilenav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mnav" id="mobilenav" hidden>
+    <a href="#accueil">Accueil</a>
+    <a href="#produits">Nos produits</a>
+    <a href="#offres">Offres et packs</a>
+    <a href="#panier">Mon panier</a>
+    <a href="#apropos">À propos</a>
+    <a href="#faq">Questions fréquentes</a>
+    <a href="#contact">Contact</a>
+    <a data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 </header>
 
@@ -413,19 +464,6 @@ dialog h2{font-size:22px}
       </div>
     </div>
   </section>
-  <section class="block reveal" id="faq">
-    <div class="pagehead">
-      <h2>Questions fréquentes</h2>
-    </div>
-    <div class="faq">
-      <details><summary>Comment passer une commande ?</summary><p>Ajoutez vos produits au panier, renseignez vos coordonnées, puis cliquez sur « Confirmer ma commande sur WhatsApp ». Votre commande est validée après échange avec notre équipe.</p></details>
-      <details><summary>Quels sont les frais de livraison ?</summary><p>La livraison est gratuite à Meknès. Pour le reste du Maroc, les frais sont de 35 DH. Le total s'affiche automatiquement selon la ville indiquée.</p></details>
-      <details><summary>Quels sont les délais de livraison ?</summary><p><span class="todo">[À compléter : délais de livraison]</span></p></details>
-      <details><summary>Comment régler ma commande ?</summary><p>Il n'y a pas de paiement en ligne. Les modalités de paiement sont confirmées avec vous sur WhatsApp avant l'expédition. <span class="todo">[À compléter : modes de paiement acceptés]</span></p></details>
-      <details><summary>Puis-je retourner un produit ?</summary><p>Consultez notre <a href="retours">politique de retour</a>. <span class="todo">[À compléter : conditions de retour]</span></p></details>
-      <details><summary>Les prix sont-ils TTC ?</summary><p><span class="todo">[À compléter : mention TVA]</span></p></details>
-    </div>
-  </section>
 
   <section class="block reveal" id="contact">
     <div class="pagehead">
@@ -446,42 +484,75 @@ dialog h2{font-size:22px}
       <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3313.336728142679!2d-5.566828624291939!3d33.855211873231795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDUxJzE4LjgiTiA1wrAzMyc1MS4zIlc!5e0!3m2!1sfr!2sma!4v1794605937967!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Localisation Silora Home Care"></iframe></div>
     </div>
   </section>
+
+  <section class="block reveal" id="faq">
+    <div class="pagehead">
+      <h2>Questions fréquentes</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Comment passer une commande ?</summary><p>Ajoutez vos produits au panier, renseignez vos coordonnées, puis cliquez sur « Confirmer ma commande sur WhatsApp ». Votre commande est validée après échange avec notre équipe.</p></details>
+      <details><summary>Quels sont les frais de livraison ?</summary><p>La livraison est gratuite à Meknès. Pour le reste du Maroc, les frais sont de 35 DH. Le total s'affiche automatiquement selon la ville indiquée.</p></details>
+      <details><summary>Quels sont les délais de livraison ?</summary><p><span class="todo">[À compléter : délais de livraison]</span></p></details>
+      <details><summary>Comment régler ma commande ?</summary><p>Il n'y a pas de paiement en ligne. Les modalités de paiement sont confirmées avec vous sur WhatsApp avant l'expédition. <span class="todo">[À compléter : modes de paiement acceptés]</span></p></details>
+      <details><summary>Puis-je retourner un produit ?</summary><p>Consultez notre <a href="retours">politique de retour</a>. <span class="todo">[À compléter : conditions de retour]</span></p></details>
+      <details><summary>Les prix sont-ils TTC ?</summary><p><span class="todo">[À compléter : mention TVA]</span></p></details>
+    </div>
+  </section>
 </div>
 </main>
 <section id="fiche" class="fiche" hidden></section>
 
-<footer class="reveal">
-  <div class="wrap foot">
-    <div>
-      <img class="foot-logo" src="images/logo.png" alt="Silora Home Care" width="44" height="44">
-      <p class="foot-note">Produits d'entretien pour la maison, au Maroc.</p>
+<footer class="site-footer reveal" id="footer">
+  <div class="wrap sf-grid">
+    <div class="sf-brand">
+      <img class="sf-logo" src="images/logo.png" alt="Silora Home Care" width="52" height="52">
+      <p class="sf-tag">Produits d'entretien pour la maison, au Maroc.</p>
+      <div class="sf-social" aria-label="Réseaux sociaux">
+        <a href="#" title="Instagram [à compléter]" aria-label="Instagram" class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a>
+        <a href="#" title="Facebook [à compléter]" aria-label="Facebook" class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 8h2.5V4.5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3.5h2.5V21H14v-6.5h2.5L17 11h-3V8.5a.5.5 0 0 1 .5-.5z"/></svg></a>
+        <a href="#" title="TikTok [à compléter]" aria-label="TikTok" class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2 4.3 4.5 4.6"/></svg></a>
+      </div>
     </div>
-    <nav aria-label="Boutique">
+
+    <nav class="sf-col" aria-label="Liens rapides">
       <b>Boutique</b>
       <a href="#produits">Nos produits</a>
       <a href="#offres">Offres et packs</a>
       <a href="#panier">Mon panier</a>
-    </nav>
-    <nav aria-label="Informations">
-      <b>Informations</b>
       <a href="a-propos">À propos</a>
-      <a href="#faq">FAQ</a>
-      <a href="livraison">Livraison</a>
-      <a href="retours">Retours</a>
     </nav>
-    <nav aria-label="Légal">
-      <b>Légal</b>
-      <a href="cgv">Conditions générales de vente</a>
+
+    <nav class="sf-col" aria-label="Service client">
+      <b>Service client</b>
+      <a href="#contact">Contact</a>
+      <a href="#faq">Questions fréquentes</a>
+      <a href="livraison">Livraison</a>
+      <a href="retours">Retours et remboursements</a>
+    </nav>
+
+    <div class="sf-col sf-contact">
+      <b>Nous joindre</b>
+      <a href="tel:+212657436309">+212 6 57 43 63 09</a>
+      <a data-wa href="#">WhatsApp</a>
+      <span>Meknès, Maroc</span>
+      <span class="sf-hours">Horaires : <span class="todo">[À compléter]</span></span>
+    </div>
+
+    <div class="sf-news">
+      <b>Offres et nouveautés</b>
+      <p>Recevez nos packs et promotions directement sur WhatsApp.</p>
+      <a class="btn sm" data-wa-text="Bonjour, je souhaite recevoir les offres et nouveautés Silora Home Care." href="#" target="_blank" rel="noopener">S'abonner sur WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="wrap sf-bottom">
+    <span>© 2026 Silora Home Care. Tous droits réservés.</span>
+    <nav class="sf-legal" aria-label="Pages légales">
+      <a href="cgv">CGV</a>
       <a href="confidentialite">Confidentialité</a>
       <a href="mentions-legales">Mentions légales</a>
     </nav>
-    <div>
-      <b>Contact</b>
-      <a href="tel:+212657436309">+212 6 57 43 63 09</a>
-      <a data-wa href="#">WhatsApp</a>
-    </div>
   </div>
-  <div class="wrap copy">© 2026 Silora Home Care. Tous droits réservés.</div>
 </footer>
 
 <a class="wa" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
@@ -812,6 +883,8 @@ Merci de confirmer la disponibilité des produits, le prix final et les modalit�
 });
 
 document.querySelectorAll("[data-wa]").forEach(a => a.href = `https://wa.me/${WA}`);
+document.querySelectorAll("[data-wa-text]").forEach(a => a.href = `https://wa.me/${WA}?text=${encodeURIComponent(a.dataset.waText)}`);
+
 
 $("#heroart").insertAdjacentHTML("afterbegin", [["pate850","s1"],["multispray","s2"],["lbio","s3"],["poudreb","s4"]]
   .map(([id,c]) => `<div class="shot ${c}"><img src="${IMG[id]}" alt=""></div>`).join(""));
@@ -843,6 +916,16 @@ function applyTheme(t){
 let savedTheme = null;
 try { savedTheme = localStorage.getItem("ps_theme"); } catch(e) {}
 applyTheme(savedTheme || (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+const mbtn = $("#menubtn"), mnav = $("#mobilenav");
+function setMenu(open){
+  mnav.hidden = !open;
+  mbtn.classList.toggle("open", open);
+  mbtn.setAttribute("aria-expanded", String(open));
+  mbtn.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+}
+mbtn.addEventListener("click", () => setMenu(mnav.hidden));
+mnav.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
 $("#theme").addEventListener("click", () => applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark"));
 $("#cvil").addEventListener("input", renderCart);
 $("#offers").innerHTML = ["pack-cuisine","pack-essentiel","pack-complet","gelwc"].map(id => {
