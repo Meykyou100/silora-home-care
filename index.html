@@ -587,9 +587,8 @@ dialog h2{font-size:22px}
       <img class="sf-logo" src="images/logo.png" alt="Silora Home Care" width="52" height="52">
       <p class="sf-tag">Produits d'entretien pour la maison, au Maroc.</p>
       <div class="sf-social" aria-label="Réseaux sociaux">
-        <a href="#" title="Instagram [à compléter]" aria-label="Instagram" class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a>
-        <a href="#" title="Facebook [à compléter]" aria-label="Facebook" class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 8h2.5V4.5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3.5h2.5V21H14v-6.5h2.5L17 11h-3V8.5a.5.5 0 0 1 .5-.5z"/></svg></a>
-        <a href="#" title="TikTok [à compléter]" aria-label="TikTok" class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2 4.3 4.5 4.6"/></svg></a>
+        <a href="https://www.instagram.com/silora.clean?mdxt=MTZsaGJwNmJzZnk5eA==" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram" class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a>
+        <a href="https://www.tiktok.com/@silora.clean?_r=1&amp;_t=ZS-9BQUq1s7RZO" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok" class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2 4.3 4.5 4.6"/></svg></a>
       </div>
     </div>
 
@@ -674,26 +673,26 @@ const IMG = {
 }; // id produit -> URL de l'asset publié
 
 const P = [
-  {id:"pate850", n:"Pâte Nettoyante Miracle", f:"850 g", c:"cuisine", d:"Nettoie la saleté, la crasse et les taches sur casseroles, plaques de cuisson, éviers, barbecues, carrelage, vitres et cuivre."},
+  {id:"pate850", price:49, old:79, n:"Pâte Nettoyante Miracle", f:"850 g", c:"cuisine", d:"Nettoie la saleté, la crasse et les taches sur casseroles, plaques de cuisson, éviers, barbecues, carrelage, vitres et cuivre."},
   {id:"creme500", n:"Crème Nettoyante Miracle", f:"500 ml", c:"cuisine", d:"Crème abrasive douce pour surfaces dures. Élimine la graisse et les taches tenaces avec un minimum d'effort."},
-  {id:"pate300", n:"Pâte Nettoyante Miracle en tube", f:"300 g · 8 tubes", c:"cuisine", d:"Formule plus douce et facile à rincer. Le tube permet d'appliquer la pâte exactement là où vous en avez besoin."},
-  {id:"vaisselle", n:"Spray pour liquide vaisselle", f:"500 ml", c:"cuisine", d:"Dissout la graisse et laisse vaisselle et surfaces d'une propreté éclatante. Produit végétalien."},
+  {id:"pate300", price:49, old:59, n:"Pâte Nettoyante Miracle en tube", f:"300 g · 8 tubes", c:"cuisine", d:"Formule plus douce et facile à rincer. Le tube permet d'appliquer la pâte exactement là où vous en avez besoin."},
+  {id:"vaisselle", price:49, old:59, n:"Spray pour liquide vaisselle", f:"500 ml", c:"cuisine", d:"Dissout la graisse et laisse vaisselle et surfaces d'une propreté éclatante. Produit végétalien."},
   {id:"mousse", n:"Mousse nettoyante Miracle salle de bain", f:"750 ml", c:"sdb", d:"Adhère aux surfaces pour éliminer saleté, graisse, savon et résidus. Prévient et élimine le tartre."},
   {id:"gelwc", price:46, old:55, n:"Gel nettoyant Miracle pour toilettes", f:"750 ml", c:"sdb", d:"Gel épais qui adhère à la cuvette, nettoie au-dessus et en dessous de la ligne d'eau."},
-  {id:"sols", n:"Nettoyant multi-usages pour sols", f:"1 L", c:"sols", d:"Sols propres et frais avec un éclat brillant. Pas besoin de rincer. Convient aux fosses septiques et aux végans."},
+  {id:"sols", price:49, old:59, n:"Nettoyant multi-usages pour sols", f:"1 L", c:"sols", d:"Sols propres et frais avec un éclat brillant. Pas besoin de rincer. Convient aux fosses septiques et aux végans."},
   {id:"multispray", n:"Nettoyant multi-usage Miracle en spray", f:"750 ml", c:"sols", d:"Solution en spray pour surfaces dures. Élimine la graisse et la saleté, même les taches tenaces."},
-  {id:"lsols", n:"Lingettes de sol biodégradables", f:"20 grandes lingettes", c:"sols", d:"Lingettes sans plastique, en fibres végétales. À utiliser à la main ou sur une serpillière compatible."},
-  {id:"lmulti", n:"Lingettes multi-usages surfaces dures", f:"72 lingettes", c:"sols", d:"Pour cuisine, salle de bain, éviers, poubelles et poignées de porte. Biodégradables et sans plastique."},
+  {id:"lsols", price:52, old:62, n:"Lingettes de sol biodégradables", f:"20 grandes lingettes", c:"sols", d:"Lingettes sans plastique, en fibres végétales. À utiliser à la main ou sur une serpillière compatible."},
+  {id:"lmulti", price:55, old:65, n:"Lingettes multi-usages surfaces dures", f:"72 lingettes", c:"sols", d:"Pour cuisine, salle de bain, éviers, poubelles et poignées de porte. Biodégradables et sans plastique."},
   {id:"vitres", n:"Nettoyant Miracle pour fenêtres", f:"750 ml", c:"vitres", d:"Élimine graisse et saleté sur vitres et miroirs, avec une brillance sans traces grâce au vinaigre de rose."},
   {id:"tapis", price:46, old:55, n:"Détachant Miracle moussant tapis et ameublement", f:"500 ml", c:"detach", d:"Mousse OXI qui pénètre les taches courantes (vin rouge, café, jus de fruit) sur tapis et meubles rembourrés."},
   {id:"oxispray", n:"Détachant Miracle OXI en spray", f:"500 ml", c:"detach", d:"Spray détachant pratique, idéal pour les blancs et les couleurs. Élimine en douceur les taches du quotidien."},
-  {id:"poudreb", n:"Détachant en poudre OXI pour blancs", f:"1 kg", c:"detach", d:"Formule à action oxi pour prélavage ou lavage en machine, sans produits chimiques agressifs."},
-  {id:"poudrec", n:"Détachant en poudre OXI pour couleurs", f:"1 kg", c:"detach", d:"Action oxi à base biologique, adaptée aux blancs et aux couleurs. Prélavage ou ajout à la lessive habituelle."},
-  {id:"lbio", n:"Lessive Miracle Bio liquide", f:"960 ml", c:"lessive", d:"32 lavages. Élimine les taches tenaces dès la première utilisation, avec une fraîcheur qui dure 7 jours."},
-  {id:"lsens", n:"Liquide Miracle Linge Sensitive Non Bio", f:"960 ml", c:"lessive", d:"32 lavages, idéal pour les peaux sensibles. Procure 7 jours de fraîcheur."},
+  {id:"poudreb", price:80, old:99, n:"Détachant en poudre OXI pour blancs", f:"1 kg", c:"detach", d:"Formule à action oxi pour prélavage ou lavage en machine, sans produits chimiques agressifs."},
+  {id:"poudrec", price:85, old:99, n:"Détachant en poudre OXI pour couleurs", f:"1 kg", c:"detach", d:"Action oxi à base biologique, adaptée aux blancs et aux couleurs. Prélavage ou ajout à la lessive habituelle."},
+  {id:"lbio", price:75, old:80, n:"Lessive Miracle Bio liquide", f:"960 ml", c:"lessive", d:"32 lavages. Élimine les taches tenaces dès la première utilisation, avec une fraîcheur qui dure 7 jours."},
+  {id:"lsens", price:75, old:80, n:"Liquide Miracle Linge Sensitive Non Bio", f:"960 ml", c:"lessive", d:"32 lavages, idéal pour les peaux sensibles. Procure 7 jours de fraîcheur."},
   {id:"lcol", n:"Liquide Miracle Linge Couleurs Sensitive", f:"960 ml", c:"lessive", d:"Préserve l'éclat et la fraîcheur des textiles colorés, avec jusqu'à 7 jours de fraîcheur."},
-  {id:"kit", n:"Kit de pâte nettoyante Miracle", f:"850 g", c:"acc", d:"Comprend un pot de pâte de 850 g et une éponge double face souple avec brosse intégrée."},
-  {id:"squeezy", n:"Éponge double face SQeeZY Miracle", f:"1 pièce", c:"acc", d:"Éponge souple utilisable à l'eau froide ou chaude, pour la cuisine, la salle de bain et l'extérieur."},
+  {id:"kit", price:80, old:95, n:"Kit de pâte nettoyante Miracle", f:"850 g", c:"acc", d:"Comprend un pot de pâte de 850 g et une éponge double face souple avec brosse intégrée."},
+  {id:"squeezy", price:45, old:55, n:"Éponge double face SQeeZY Miracle", f:"1 pièce", c:"acc", d:"Éponge souple utilisable à l'eau froide ou chaude, pour la cuisine, la salle de bain et l'extérieur."},
   {id:"micro", n:"Ensemble de 3 coussinets en microfibre", f:"Lot de 3", c:"acc", d:"Absorbants et résistants pour éliminer saleté, graisse et poussière, et nettoyer les déversements."},
   {id:"pack-cuisine", n:"Pack Cuisine", f:"3 produits", c:"packs", price:149, items:["vaisselle","pate850","squeezy"], d:"Spray vaisselle 500 ml, pâte nettoyante 850 g et éponge SQeeZY Miracle pour la cuisine."},
   {id:"pack-essentiel", n:"Pack Essentiel", f:"3 produits", c:"packs", price:135, items:["multispray","pate850","mousse"], d:"Nettoyant multi-usage, pâte nettoyante 850 g et mousse salle de bain pour toute la maison."},
